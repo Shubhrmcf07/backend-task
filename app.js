@@ -13,13 +13,17 @@ const player = require("./models/players");
 const game = require("./models/games");
 const schema = require("./graphql/schema");
 const Schema = require("./graphql/schema");
+require("dotenv").config();
+require("url-search-params-polyfill");
 const app = express();
-
-mongoose.connect("mongodb://localhost:27017/graphql", {
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useNewUrlParser: true,
-});
+mongoose.connect(
+  `mongodb+srv://${process.env.user}:${process.env.password}@cluster0.8hk8i.mongodb.net/task?retryWrites=true&w=majority`,
+  {
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useNewUrlParser: true,
+  }
+);
 
 app.use(express.static("./doc/schema/"));
 
