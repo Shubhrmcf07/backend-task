@@ -16,7 +16,7 @@
     "graphql": "^15.3.0",
     "mongoose": "^5.9.23",
     "url-search-params-polyfill": "^8.1.0",
-    "validator": "^13.1.1"
+    "validator": "^13.7.0"
   },
   "names": "project",
   "graphdoc": {
